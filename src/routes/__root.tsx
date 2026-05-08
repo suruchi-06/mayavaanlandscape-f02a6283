@@ -77,11 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Mayavaan Landscape — Sustainable Garden & Landscape Design in India" },
       { name: "description", content: "Mayavaan Landscape Pvt. Ltd. designs and develops sustainable indoor & outdoor green spaces — gardens, resorts, farmhouses and commercial landscapes." },
       { name: "author", content: "Mayavaan Landscape Pvt. Ltd." },
-      { property: "og:title", content: "Mayavaan Landscape — Sustainable Landscaping" },
-      { property: "og:description", content: "Horticulture-driven landscape design and development across India." },
+      { property: "og:title", content: "Mayavaan Landscape — Sustainable Garden & Landscape Design in India" },
+      { property: "og:description", content: "Mayavaan Landscape Pvt. Ltd. designs and develops sustainable indoor & outdoor green spaces — gardens, resorts, farmhouses and commercial landscapes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Mayavaan Landscape — Sustainable Garden & Landscape Design in India" },
+      { name: "twitter:description", content: "Mayavaan Landscape Pvt. Ltd. designs and develops sustainable indoor & outdoor green spaces — gardens, resorts, farmhouses and commercial landscapes." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f27739b4-57d2-4f3d-be66-ecdc4f2e1261" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f27739b4-57d2-4f3d-be66-ecdc4f2e1261" },
     ],
     links: [
       {
