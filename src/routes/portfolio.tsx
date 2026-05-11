@@ -17,6 +17,8 @@ import w13 from "@/assets/work-13.jpg";
 import w14 from "@/assets/work-14.jpg";
 import w15 from "@/assets/work-15.jpg";
 import w16 from "@/assets/work-16.jpg";
+import wRooftop from "@/assets/work-rooftop.jpg";
+import wGreenwall from "@/assets/work-greenwall.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -28,9 +30,11 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-type Cat = "All" | "Indoor" | "Outdoor" | "Commercial" | "Pathways";
+type Cat = "All" | "Indoor" | "Outdoor" | "Commercial" | "Pathways" | "Rooftop" | "Green Walls";
 
 const works: { src: string; title: string; cat: Exclude<Cat, "All">; desc: string }[] = [
+  { src: wRooftop, title: "Skyline Rooftop Garden", cat: "Rooftop", desc: "Layered rooftop plantation with corten planters and walking path." },
+  { src: wGreenwall, title: "Living Green Wall", cat: "Green Walls", desc: "Floor-to-ceiling vertical garden with mixed tropical foliage." },
   { src: w5, title: "Lobby Water Garden", cat: "Indoor", desc: "Tropical indoor installation with cascading water feature." },
   { src: w7, title: "Statement Planter Wall", cat: "Indoor", desc: "Spotlit palm planters in a luxury interior." },
   { src: w6, title: "Curved Foliage Planter", cat: "Indoor", desc: "Sculpted planter against textured brick." },
@@ -49,7 +53,7 @@ const works: { src: string; title: string; cat: Exclude<Cat, "All">; desc: strin
   { src: w16, title: "Landscape Detail", cat: "Outdoor", desc: "Layered planting composition." },
 ];
 
-const cats: Cat[] = ["All", "Indoor", "Outdoor", "Pathways", "Commercial"];
+const cats: Cat[] = ["All", "Indoor", "Outdoor", "Rooftop", "Green Walls", "Pathways", "Commercial"];
 
 function Portfolio() {
   const [cat, setCat] = useState<Cat>("All");
