@@ -19,9 +19,10 @@ function Contact() {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="Get in touch" title="Let's design something that grows with you">
+      <SectionHeader eyebrow="Get in touch" title="Let's design something that grows with you">
           Tell us about your space, your dream, and your timeline. We'll respond within 24 hours.
         </SectionHeader>
+        {/* form submission opens user's email client pre-filled to mayavaanlandscape@gmail.com */}
 
         <div className="grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-5">
@@ -45,7 +46,21 @@ function Contact() {
           </div>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const name = String(fd.get("name") || "").trim().slice(0, 100);
+              const phone = String(fd.get("phone") || "").trim().slice(0, 30);
+              const email = String(fd.get("email") || "").trim().slice(0, 120);
+              const projectType = String(fd.get("projectType") || "").trim().slice(0, 80);
+              const message = String(fd.get("message") || "").trim().slice(0, 2000);
+              const subject = `New consultation request — ${projectType || "Mayavaan Landscape"}`;
+              const body =
+                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}\n`;
+              const mailto = `mailto:mayavaanlandscape@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              window.location.href = mailto;
+              setSent(true);
+            }}
             className="lg:col-span-3 bg-card p-8 sm:p-10 rounded-3xl border border-border/60 shadow-soft"
           >
             {sent ? (
@@ -54,7 +69,7 @@ function Contact() {
                   <Send className="h-7 w-7" />
                 </div>
                 <h3 className="font-display text-3xl font-bold mb-2">Thank you!</h3>
-                <p className="text-muted-foreground">We've received your message and will reach out within 24 hours.</p>
+                <p className="text-muted-foreground">Your email app should now be open with the details ready to send. We'll respond within 24 hours.</p>
               </div>
             ) : (
               <>
@@ -65,7 +80,7 @@ function Contact() {
                   <div className="sm:col-span-2"><Field label="Email" name="email" type="email" required /></div>
                   <div className="sm:col-span-2">
                     <label className="text-sm font-medium mb-1.5 block">Project Type</label>
-                    <select required className="w-full px-4 py-3 rounded-xl bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                    <select name="projectType" required className="w-full px-4 py-3 rounded-xl bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
                       <option value="">Select a project type</option>
                       <option>Residential Garden</option>
                       <option>Farmhouse Landscaping</option>
@@ -79,7 +94,7 @@ function Contact() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="text-sm font-medium mb-1.5 block">Tell us about your space</label>
-                    <textarea required rows={5} className="w-full px-4 py-3 rounded-xl bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition resize-none" placeholder="Location, size, vision, timeline…" />
+                    <textarea name="message" required rows={5} maxLength={2000} className="w-full px-4 py-3 rounded-xl bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition resize-none" placeholder="Location, size, vision, timeline…" />
                   </div>
                 </div>
                 <button type="submit" className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-leaf text-primary-foreground font-semibold shadow-leaf hover:scale-[1.01] transition">
