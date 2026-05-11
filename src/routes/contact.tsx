@@ -19,9 +19,10 @@ function Contact() {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="Get in touch" title="Let's design something that grows with you">
+      <SectionHeader eyebrow="Get in touch" title="Let's design something that grows with you">
           Tell us about your space, your dream, and your timeline. We'll respond within 24 hours.
         </SectionHeader>
+        {/* form submission opens user's email client pre-filled to mayavaanlandscape@gmail.com */}
 
         <div className="grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-5">
