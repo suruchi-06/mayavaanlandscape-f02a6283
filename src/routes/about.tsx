@@ -24,7 +24,7 @@ function About() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-accent font-semibold">Our Story</span>
           <h1 className="font-display text-5xl sm:text-7xl font-bold mt-3 max-w-3xl text-balance">
-            Rooted in nature.<br />Designed for life.
+            Rooted in Nature.<br />Design by Us.
           </h1>
           <p className="mt-6 max-w-2xl text-primary-foreground/85 text-lg">
             Mayavaan Landscape Pvt. Ltd. is a professional landscape design and development company
