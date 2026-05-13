@@ -28,7 +28,7 @@ export function SiteFooter() {
         <div>
           <h4 className="font-semibold mb-4 text-accent">Reach Us</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/85">
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 shrink-0" /><span>+91 60013 19693<br />+91 94522 58324</span></li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 shrink-0" /><span>+91 60013 19663<br />+91 94522 58324</span></li>
             <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 shrink-0" /><span>mayavaanlandscape@gmail.com</span></li>
             <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /><span>Ajwa, Patna, Bihar, India</span></li>
           </ul>
