@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sprout, Droplets, Sun, Recycle, Star, Quote } from "lucide-react";
 import hero from "@/assets/hero.jpg";
-import w1 from "@/assets/work-1.jpg";
-import w3 from "@/assets/work-3.jpg";
 import w5 from "@/assets/work-5.jpg";
-import w7 from "@/assets/work-7.jpg";
 import w8 from "@/assets/work-8.jpg";
 import w9 from "@/assets/work-9.jpg";
+import m1 from "@/assets/home-mission-1.jpg";
+import m2 from "@/assets/home-mission-2.jpg";
+import m3 from "@/assets/home-mission-3.jpg";
+import m4 from "@/assets/home-mission-4.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export const Route = createFileRoute("/")({
@@ -114,10 +115,10 @@ function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src={w5} alt="Indoor waterfall garden" className="rounded-2xl shadow-leaf object-cover h-72 w-full" loading="lazy" />
-            <img src={w7} alt="Tropical planters" className="rounded-2xl shadow-leaf object-cover h-72 w-full mt-12" loading="lazy" />
-            <img src={w3} alt="Curved garden pathway" className="rounded-2xl shadow-leaf object-cover h-72 w-full -mt-6" loading="lazy" />
-            <img src={w1} alt="Landscape with plants and statue" className="rounded-2xl shadow-leaf object-cover h-72 w-full mt-6" loading="lazy" />
+            <img src={m1} alt="Designed rooftop garden with pergola at dusk" className="rounded-2xl shadow-leaf object-cover h-72 w-full" loading="lazy" />
+            <img src={m3} alt="Indoor green wall installation" className="rounded-2xl shadow-leaf object-cover h-72 w-full mt-12" loading="lazy" />
+            <img src={m2} alt="Landscaped residency entrance with bougainvillea" className="rounded-2xl shadow-leaf object-cover h-72 w-full -mt-6" loading="lazy" />
+            <img src={m4} alt="Vertical garden on terrace wall" className="rounded-2xl shadow-leaf object-cover h-72 w-full mt-6" loading="lazy" />
           </div>
         </div>
       </section>

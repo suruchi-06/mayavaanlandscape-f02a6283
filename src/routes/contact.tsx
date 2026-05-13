@@ -27,7 +27,7 @@ function Contact() {
         <div className="grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-5">
             {[
-              { icon: Phone, title: "Call us", body: "+91 60013 19693\n+91 94522 58324", href: "tel:+916001319693" },
+              { icon: Phone, title: "Call us", body: "+91 60013 19663\n+91 94522 58324", href: "tel:+916001319663" },
               { icon: Mail, title: "Email us", body: "mayavaanlandscape@gmail.com", href: "mailto:mayavaanlandscape@gmail.com" },
               { icon: MapPin, title: "Visit us", body: "Ajwa, Patna\nBihar, India" },
             ].map((c) => (
@@ -54,11 +54,11 @@ function Contact() {
               const email = String(fd.get("email") || "").trim().slice(0, 120);
               const projectType = String(fd.get("projectType") || "").trim().slice(0, 80);
               const message = String(fd.get("message") || "").trim().slice(0, 2000);
-              const subject = `New consultation request — ${projectType || "Mayavaan Landscape"}`;
-              const body =
-                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}\n`;
-              const mailto = `mailto:mayavaanlandscape@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-              window.location.href = mailto;
+              const text =
+                `*New consultation request — Mayavaan Landscape*\n\n` +
+                `*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Project Type:* ${projectType}\n\n*Message:*\n${message}`;
+              const wa = `https://wa.me/916001319663?text=${encodeURIComponent(text)}`;
+              window.open(wa, "_blank", "noopener,noreferrer");
               setSent(true);
             }}
             className="lg:col-span-3 bg-card p-8 sm:p-10 rounded-3xl border border-border/60 shadow-soft"
@@ -69,7 +69,7 @@ function Contact() {
                   <Send className="h-7 w-7" />
                 </div>
                 <h3 className="font-display text-3xl font-bold mb-2">Thank you!</h3>
-                <p className="text-muted-foreground">Your email app should now be open with the details ready to send. We'll respond within 24 hours.</p>
+                <p className="text-muted-foreground">Your message has opened in WhatsApp — just hit send to deliver it to our team. We'll respond within 24 hours.</p>
               </div>
             ) : (
               <>
@@ -98,8 +98,9 @@ function Contact() {
                   </div>
                 </div>
                 <button type="submit" className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-leaf text-primary-foreground font-semibold shadow-leaf hover:scale-[1.01] transition">
-                  Send Message <Send className="h-4 w-4" />
+                  Send via WhatsApp <Send className="h-4 w-4" />
                 </button>
+                <p className="mt-3 text-xs text-muted-foreground text-center">Your details are sent directly to our team on WhatsApp (+91 60013 19663).</p>
               </>
             )}
           </form>
