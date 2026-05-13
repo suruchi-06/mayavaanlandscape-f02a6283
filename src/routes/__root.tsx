@@ -74,6 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "UQdK-QpQ0ZEyqI3-GB8UgE1jqo31wsqaYeZ4OGmiVUg" },
       { title: "Mayavaan Landscape — Sustainable Garden & Landscape Design in India" },
       { name: "description", content: "Mayavaan Landscape Pvt. Ltd. designs and develops sustainable indoor & outdoor green spaces — gardens, resorts, farmhouses and commercial landscapes." },
       { name: "author", content: "Mayavaan Landscape Pvt. Ltd." },
