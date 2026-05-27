@@ -3,14 +3,11 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
-  "scripts": {
-  "dev": "vinxi dev",
-  "build": "vinxi build",
-  "build:dev": "vinxi build --mode development",
-  "preview": "vinxi preview",
-  "lint": "eslint .",
-  "format": "prettier --write ."
-},
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "node .output/server/index.mjs"
+}
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
     "@hookform/resolvers": "^5.2.2",
